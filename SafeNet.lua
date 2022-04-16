@@ -28,7 +28,6 @@ local SafeNet = {}
             IpAddressString = IpAddressString .. IpAddress[i] .. "."
         end
         --remove last letter because of ending .
-        IpAddressString = string.sub(IpAddressString, 1, #IpAddressString-1)
         return IpAddressString
     end
     SafeNet.ConvertIpAddressToString = ConvertIpAddressToString
