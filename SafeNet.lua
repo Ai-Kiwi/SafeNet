@@ -18,7 +18,6 @@ local SafeNet = {}
         local File = fs.open("SafeNet.lua", "w")
         File.write(CloudFile.readAll())
         File.close()
-        print("SafeNet updated")
         CloudFile.close()
     end
 
@@ -36,8 +35,9 @@ local SafeNet = {}
         local IpAddress = {}
         local LastDotPoint = 1
         for i = 1, #IpAddressString do
-            if IpAddressString[i] == "." then
+            if string.sub(IpAddressString,i,i) == "." then
                 table.insert(IpAddress, tonumber(string.sub(IpAddressString, LastDotPoint, i-1)))
+                
                 LastDotPoint = i+1
             end
         end
