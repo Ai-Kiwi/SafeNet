@@ -30,3 +30,6 @@ print(SafeNet.publicKey)
 SafeNet.SendMessage("hello",{238,106,242,150,181,37,45,174,6,36,232,96,233,128,11,21,153,223,14,128,164,1,})
 
 ```
+
+# vulnerables
+ 1. ip addresses once creacked have all messages saved leaked
