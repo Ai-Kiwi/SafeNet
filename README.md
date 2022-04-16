@@ -7,6 +7,7 @@ safenet is a simple program for computercraft that aims to have full encrystion 
 -- ecc
 pastebin get ZGJGBJdg ecc
 -- install program wget <url> SafeNet
+wget run https://raw.githubusercontent.com/Ai-Kiwi/SafeNet/main/SafeNet.lua
 ```
 
 # how to use
