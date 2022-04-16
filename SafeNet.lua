@@ -13,7 +13,7 @@ local SafeNet = {}
     end
 
     --install latest verson from cloud
-    local CloudFile = http.get("https://raw.githubusercontent.com/Ai-Kiwi/SafeNet/main/SafeNet.lua" .. "cb=" .. math.random(1,999999))
+    local CloudFile = http.get("https://raw.githubusercontent.com/Ai-Kiwi/SafeNet/main/SafeNet.lua" .. "?cb=" .. math.random(1,999999))
     if CloudFile then
         local File = fs.open("SafeNet.lua", "w")
         File.write(CloudFile.readAll())
