@@ -29,6 +29,11 @@ print(SafeNet.publicKey)
 --says hello to a sample computer (secand value is ip adddress in raw format)
 SafeNet.SendMessage("hello",{238,106,242,150,181,37,45,174,6,36,232,96,233,128,11,21,153,223,14,128,164,1,})
 
+--if you need to send ip addresses in a non table format use the following functions
+--convert ip address table to ip address string
+SafeNet.ConvertIpAddressToString()
+--converts ip address string to ip address table
+SafeNet.ConvertStringToIpAddress()
 ```
 
 # vulnerables
