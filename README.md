@@ -32,10 +32,10 @@ SafeNet.SendMessage("hello",{238,106,242,150,181,37,45,174,6,36,232,96,233,128,1
 --if you need to send ip addresses in a non table format use the following functions
 
 --convert ip address table to ip address string
-local IpAddress = SafeNet.ConvertIpAddressToString()
+local StringIpAddress = SafeNet.ConvertIpAddressToString(SafeNet.publicKey)
 
 --converts ip address string to ip address table
-local IpAddress = SafeNet.ConvertStringToIpAddress()
+local IpAddress = SafeNet.ConvertStringToIpAddress(StringIpAddress)
 ```
 
 # vulnerables
