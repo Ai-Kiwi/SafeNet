@@ -22,6 +22,26 @@ local SafeNet = {}
         CloudFile.close()
     end
 
+    local function ConvertIpAddressToString(IpAddress)
+        local IpAddressString = ""
+        for i = 1, #IpAddress do
+            IpAddressString = IpAddressString .. IpAddress[i] .. "."
+        end
+        return IpAddressString
+    end
+    SafeNet.ConvertIpAddressToString = ConvertIpAddressToString
+
+    local function ConvertStringToIpAddress(IpAddressString)
+        local IpAddress = {}
+        for i = 1, #IpAddressString do
+            if IpAddressString[i] == "." then
+                table.insert(IpAddress, tonumber(IpAddressString[i-1]))
+            end
+        end
+        return IpAddress
+    end
+    SafeNet.ConvertStringToIpAddress = ConvertStringToIpAddress
+
     --creates new ip address
     local function CreateIpAddress()
         
