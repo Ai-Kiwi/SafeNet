@@ -4,4 +4,6 @@ safenet is a simple program for computercraft that aims to have full encrystion 
 #how to use
 ```
 this is on my todo list lmao
+
+ee
 ```
