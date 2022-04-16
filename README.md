@@ -33,3 +33,4 @@ SafeNet.SendMessage("hello",{238,106,242,150,181,37,45,174,6,36,232,96,233,128,1
 
 # vulnerables
  1. ip addresses once creacked have all messages saved leaked
+ 2. level of encryption untested
