@@ -27,15 +27,19 @@ local SafeNet = {}
         for i = 1, #IpAddress do
             IpAddressString = IpAddressString .. IpAddress[i] .. "."
         end
+        --remove last letter because of ending .
+        IpAddressString = string.sub(IpAddressString, 1, #IpAddressString-1)
         return IpAddressString
     end
     SafeNet.ConvertIpAddressToString = ConvertIpAddressToString
 
     local function ConvertStringToIpAddress(IpAddressString)
         local IpAddress = {}
+        local LastDotPoint = 1
         for i = 1, #IpAddressString do
             if IpAddressString[i] == "." then
-                table.insert(IpAddress, tonumber(IpAddressString[i-1]))
+                table.insert(IpAddress, tonumber(string.sub(IpAddressString, LastDotPoint, i-1)))
+                LastDotPoint = i+1
             end
         end
         return IpAddress
