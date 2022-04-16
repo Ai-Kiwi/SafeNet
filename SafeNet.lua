@@ -13,7 +13,7 @@ local SafeNet = {}
     end
 
     --install latest verson from cloud
-    CloudFile = http.get("https://raw.githubusercontent.com/Ai-Kiwi/SafeNet/main/SafeNet.lua" .. "cb=" .. math.random(1,999999))
+    local CloudFile = http.get("https://raw.githubusercontent.com/Ai-Kiwi/SafeNet/main/SafeNet.lua" .. "cb=" .. math.random(1,999999))
     if CloudFile then
         local File = fs.open("SafeNet.lua", "w")
         File.write(CloudFile.readAll())
@@ -164,6 +164,24 @@ local SafeNet = {}
 
     end
     SafeNet.HandleInput = HandleInput
+
+
+
+
+
+
+    --things to add
+    --automatic ip dealing with cheeks if one saved if not makes one
+    --auto updating
+    --program that trys to crack ip addresses to test security
+
+
+
+
+
+
+
+
 
 
 return SafeNet  
