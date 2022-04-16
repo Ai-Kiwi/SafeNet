@@ -3,8 +3,7 @@ safenet is a simple program for computercraft that aims to have full encrystion 
 
 #how to instal
 ```
--- install libs
--- ecc
+-- install ecc lib
 pastebin get ZGJGBJdg ecc
 -- install program wget <url> SafeNet
 wget run https://raw.githubusercontent.com/Ai-Kiwi/SafeNet/main/SafeNet.lua
