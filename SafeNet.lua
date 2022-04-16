@@ -95,8 +95,7 @@ local SafeNet = {}
     end
     SafeNet.LoadIpAddress = LoadIpAddress
 
-    --send message
-    local function SendMessage(Message, IpAddress)
+    local function PCALL_SendMessage(Message, IpAddress)
         --format for messages
         -- {SafeNet_Message,IpAddressTo,IpAddressFrom.Encrypted>{Message,TimeSent}}
         local TunnelKey = SafeNet.ecc.exchange(SafeNet.privateKey, IpAddress)
@@ -105,13 +104,20 @@ local SafeNet = {}
         local MessageText = textutils.serialize({"SafeNet_Message", IpAddress, SafeNet.publicKey, EncryptedData})
         --send message
         SafeNet.modem.transmit(24725, 24725, MessageText)
+    end
 
-
+    --send message
+    local function SendMessage(Message,IpAddress)
+        local PcallWorked = pcall(PCALL_SendMessage, Message, IpAddress)
+        if PcallWorked then
+            return true
+        else
+            return false  
+        end
     end
     SafeNet.SendMessage = SendMessage
 
-    --receive message
-    local function HandleInput(MessageData)
+    local function PCALL_HandleInput(MessageData)
         local Message = textutils.unserialize(MessageData)
 
 
@@ -146,20 +152,18 @@ local SafeNet = {}
         end
         return nil, "not SafeNet_Message"
     end
+
+    --receive message
+    local function HandleInput(MessageData)
+        local PcallWorked, Message = pcall(PCALL_HandleInput, MessageData)
+        if PcallWorked then
+            return Message
+        else
+            return nil, Message
+        end
+
+    end
     SafeNet.HandleInput = HandleInput
-
-    --things to add
-    --automatic ip dealing with cheeks if one saved if not makes one
-    --auto updating
-    --program that trys to crack ip addresses to test security
-
-
-
-
-
-
-
-
 
 
 return SafeNet  
