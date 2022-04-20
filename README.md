@@ -36,6 +36,9 @@ local StringIpAddress = SafeNet.ConvertIpAddressToString(SafeNet.publicKey)
 
 --converts ip address string to ip address table
 local IpAddress = SafeNet.ConvertStringToIpAddress(StringIpAddress)
+
+--print out version installed
+print(SafeNet.version)
 ```
 
 # vulnerables
