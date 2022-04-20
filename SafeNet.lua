@@ -5,6 +5,7 @@ local SafeNet = {}
     --open modem port
     SafeNet.modem = peripheral.find("modem")
 
+    SafeNet.version = 1
     SafeNet.UsedCodes = {}
     SafeNet.privateKey = nil
     SafeNet.publicKey = nil
